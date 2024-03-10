@@ -1,30 +1,17 @@
-# React + TypeScript + Vite
+# Testing
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository serves as a deliverable exercise for a testing codelab. It focuses on unit testing the "discount" feature.
 
-Currently, two official plugins are available:
+## Purpose
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The primary goal of this repository is to facilitate learning and practice of unit testing techniques, particularly in the context of testing the discount feature. The exercises aim to reinforce understanding of unit testing principles and methodologies.
 
-## Expanding the ESLint configuration
+## Discount Testing
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+The discount testing exercise involves the following steps:
 
-- Configure the top-level `parserOptions` property like this:
+1. **FakedMoney**: A `FakeMoney` class has been created to facilitate easy access to the applied discount during testing.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+2. **Mocking MarketingCampaign Interface**: The `MarketingCampaign` interface has been mocked to simulate different scenarios. This allows for testing the behavior of the discount feature under various marketing campaign conditions.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+3. **Deletion in discountFor Method**: A conditional in the `discountFor` method has been removed. This conditional handled the scenario where an infinite price would result in a discount of 100%, as it was deemed outside the business logic.
